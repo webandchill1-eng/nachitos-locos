@@ -42,12 +42,13 @@ main { max-width:1200px; margin:40px auto; padding:0 20px; }
 
 /* Sección de combos */
 .cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:25px; margin-bottom:50px; }
-.card { background:#E0FFE0; border-radius:25px; box-shadow:0 12px 30px rgba(0,0,0,0.25); overflow:hidden; transition: transform 0.4s, box-shadow 0.4s; cursor:pointer; }
+.card { background:#FFF3E0; border-radius:25px; box-shadow:0 12px 30px rgba(0,0,0,0.25); overflow:hidden; transition: transform 0.4s, box-shadow 0.4s; cursor:pointer; }
 .card:hover { transform: translateY(-10px) scale(1.05); box-shadow:0 18px 45px rgba(0,0,0,0.35); }
 .card img { width:100%; height:180px; object-fit:cover; }
-.card .name { background:#32CD32; color:white; font-family:'Fredoka One',cursive; font-size:1.3rem; text-align:center; padding:8px; }
-.card .details { display:none; padding:10px; font-size:1rem; text-align:center; background:#C0FFC0; border-radius:0 0 15px 15px; }
-.card .price { display:block; margin:10px auto 15px; background:#FFD700; color:#333; font-weight:bold; border-radius:15px; padding:5px 15px; width:fit-content; cursor:default; }
+.card .name { background:#FFA500; color:white; font-family:'Fredoka One',cursive; font-size:1.3rem; text-align:center; padding:8px; }
+.card .details { display:none; padding:10px; font-size:1rem; text-align:left; background:#FFF8DC; border-radius:0 0 15px 15px; }
+.card .details ul { list-style-type: disc; margin-left:20px; margin-bottom:10px; }
+.card .price { display:none; margin:0 auto 10px; background:#FFD700; color:#333; font-weight:bold; border-radius:15px; padding:5px 15px; width:fit-content; text-align:center; }
 
 /* Bebidas */
 .cards-bebidas { display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap:20px; margin-bottom:50px; }
@@ -90,20 +91,39 @@ footer { text-align:center; padding:15px; background: rgba(255,255,255,0.15); ba
     <div class="card" onclick="toggleDetails(this)">
         <img src="img/nacho-economico.webp" alt="Nacho Económico">
         <div class="name">Nacho Económico</div>
-        <div class="details">Carne + Queso</div>
-        <span class="price">$0.35</span>
+        <div class="details">
+            <ul>
+                <li>Carne</li>
+                <li>Queso</li>
+            </ul>
+            <span class="price">$0.35</span>
+        </div>
     </div>
     <div class="card" onclick="toggleDetails(this)">
         <img src="img/nacho-normal.jpg" alt="Nacho Normal">
         <div class="name">Nacho Normal</div>
-        <div class="details">Carne + Frijol + Queso</div>
-        <span class="price">$0.35</span>
+        <div class="details">
+            <ul>
+                <li>Carne</li>
+                <li>Frijol</li>
+                <li>Queso</li>
+            </ul>
+            <span class="price">$0.35</span>
+        </div>
     </div>
     <div class="card" onclick="toggleDetails(this)">
         <img src="img/nacho-especial.webp" alt="Nacho Especial">
         <div class="name">Nacho Especial</div>
-        <div class="details">Carne + Frijol + Queso + Escabeche (+ Chimol opcional)</div>
-        <span class="price">$0.35</span>
+        <div class="details">
+            <ul>
+                <li>Carne</li>
+                <li>Frijol</li>
+                <li>Queso</li>
+                <li>Escabeche</li>
+                <li>Chimol (opcional)</li>
+            </ul>
+            <span class="price">$0.35</span>
+        </div>
     </div>
 </section>
 
@@ -137,10 +157,14 @@ footer { text-align:center; padding:15px; background: rgba(255,255,255,0.15); ba
 </footer>
 
 <script>
-// Mostrar/ocultar detalles combos
+// Mostrar/ocultar detalles combos y precio
 function toggleDetails(card) {
     const details = card.querySelector('.details');
-    details.style.display = (details.style.display === 'block') ? 'none' : 'block';
+    if(details.style.display === 'block') {
+        details.style.display = 'none';
+    } else {
+        details.style.display = 'block';
+    }
 }
 </script>
 
