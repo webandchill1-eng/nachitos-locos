@@ -4,147 +4,106 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nachos Locos</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
   body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #a0522d; /* marrón */
-    color: #fff;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f0e1; /* color suave de fondo */
   }
-  h1 {
-    font-family: 'Fredoka One', cursive;
+  header {
     text-align: center;
-    font-size: 3em;
-    margin: 20px 0;
-    color: #FFA500; /* naranja */
+    background-color: #ffa500;
+    padding: 20px 0;
   }
-  .menu-section {
+  header img {
+    max-width: 120px;
+  }
+  header h1 {
+    color: #fff;
+    margin: 10px 0 0 0;
+    font-size: 2em;
+  }
+  .menu {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 20px;
     gap: 20px;
-    padding: 20px;
   }
   .item {
-    background-color: #7CFC00; /* verde lechuga */
+    background-color: #fff3e0;
     border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     width: 220px;
-    padding: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
-    cursor: pointer;
-  }
-  .item:hover {
-    transform: scale(1.05);
+    text-align: center;
+    overflow: hidden;
   }
   .item img {
     width: 100%;
-    border-radius: 10px;
+    height: 150px;
+    object-fit: cover;
   }
-  .item-name {
-    font-family: 'Fredoka One', cursive;
-    font-size: 1.5em;
-    text-align: center;
+  .item h2 {
     margin: 10px 0;
-    color: #00FFFF; /* celeste */
+    color: #ff6600;
   }
-  .ingredients {
-    display: none;
-    margin-top: 10px;
-    font-size: 0.95em;
-    line-height: 1.3em;
-    list-style-type: disc;
-    padding-left: 20px;
-    color: #fff;
+  .item p {
+    padding: 0 10px 10px 10px;
+    color: #333;
+    font-size: 0.9em;
   }
-  .price {
-    display: none;
-    margin-top: 10px;
-    font-weight: bold;
-    background-color: #FFA500;
-    color: #000;
-    text-align: center;
+  .item .price {
+    background-color: #ffcc00;
     padding: 5px 0;
-    border-radius: 10px;
-  }
-  .item:hover .ingredients,
-  .item:hover .price {
-    display: block;
-  }
-  .section-title {
-    text-align: center;
-    font-size: 2em;
-    margin: 40px 0 20px;
-    color: #FFD700; /* amarillo */
-    font-family: 'Fredoka One', cursive;
+    font-weight: bold;
   }
 </style>
 </head>
 <body>
 
-<h1>Nachos Locos</h1>
+<header>
+  <img src="img/logo-nachoslocos.png" alt="Logo Nachos Locos">
+  <h1>Nachos Locos</h1>
+</header>
 
-<div class="section-title">Nuestros Nachos</div>
-<div class="menu-section">
+<section class="menu">
   <div class="item">
     <img src="img/nacho-economico.webp" alt="Nacho Económico">
-    <div class="item-name">Nacho Económico</div>
-    <ul class="ingredients">
-      <li>Nachos</li>
-      <li>Carne</li>
-      <li>Queso</li>
-    </ul>
+    <h2>Nacho Económico</h2>
+    <p>Nachos con carne y queso</p>
     <div class="price">$1.00</div>
   </div>
-
   <div class="item">
     <img src="img/nacho-normal.jpg" alt="Nacho Normal">
-    <div class="item-name">Nacho Normal</div>
-    <ul class="ingredients">
-      <li>Nachos</li>
-      <li>Carne</li>
-      <li>Frijol</li>
-      <li>Queso</li>
-    </ul>
+    <h2>Nacho Normal</h2>
+    <p>Nachos con carne, frijol y queso</p>
     <div class="price">$1.25</div>
   </div>
-
   <div class="item">
     <img src="img/nacho-especial.webp" alt="Nacho Especial">
-    <div class="item-name">Nacho Especial</div>
-    <ul class="ingredients">
-      <li>Nachos</li>
-      <li>Carne</li>
-      <li>Frijol</li>
-      <li>Queso</li>
-      <li>Escabeche</li>
-      <li>Chimol (opcional)</li>
-    </ul>
+    <h2>Nacho Especial</h2>
+    <p>Nachos con carne, frijol, queso, escabeche (opcional chimol)</p>
     <div class="price">$1.75</div>
   </div>
-</div>
+</section>
 
-<div class="section-title">Bebidas</div>
-<div class="menu-section">
+<section class="menu">
   <div class="item">
-    <img src="img/bebida-cocacola.jpg" alt="Coca-Cola">
-    <div class="item-name">Coca-Cola</div>
+    <img src="img/bebida-cocacola.jpg" alt="Coca Cola">
+    <h2>Coca Cola</h2>
     <div class="price">$0.35</div>
   </div>
-
   <div class="item">
     <img src="img/bebida-fanta.webp" alt="Fanta">
-    <div class="item-name">Fanta</div>
+    <h2>Fanta</h2>
     <div class="price">$0.35</div>
   </div>
-
   <div class="item">
     <img src="img/bebida-uva.webp" alt="Uva">
-    <div class="item-name">Uva</div>
+    <h2>Uva</h2>
     <div class="price">$0.35</div>
   </div>
-</div>
+</section>
 
 </body>
 </html>
